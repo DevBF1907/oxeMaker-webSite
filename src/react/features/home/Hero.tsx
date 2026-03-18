@@ -35,12 +35,6 @@ const Hero: React.FC = () => {
           porque aprender é buildar a própria realidade.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          <button className="maker-button w-full sm:w-auto px-10 py-5 bg-oxe-primary text-white font-logo text-3xl uppercase rounded-sm transition-all hover:-translate-y-1">
-            Buildar Agora! ⚡
-          </button>
-        </div>
-
         <div className="bg-black/20 p-4 rounded-sm border border-white/5 inline-block">
           <Countdown />
           <p className="mt-4 font-mono text-oxe-accent font-bold uppercase tracking-widest">

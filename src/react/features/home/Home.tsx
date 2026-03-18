@@ -4,9 +4,6 @@ import About from './About';
 import Features from './Features';
 import Gallery from './Gallery';
 import FounderHonor from './FounderHonor';
-import Schedule from './Schedule';
-import Sponsors from './Sponsors';
-import FinalCTA from './FinalCTA';
 
 const Home: React.FC = () => {
   return (
@@ -15,10 +12,7 @@ const Home: React.FC = () => {
       <FounderHonor />
       <About />
       <Features />
-      <Schedule />
       <Gallery />
-      <Sponsors />
-      <FinalCTA />
     </>
   );
 };
