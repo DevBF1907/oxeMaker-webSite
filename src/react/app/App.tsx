@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import RoboticsTournament from './components/RoboticsTournament';
-import GeekCulture from './components/GeekCulture';
-import Oxethon from './components/Oxethon';
-import Workshops from './components/Workshops';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import Navbar from '../components/common/Navbar';
+import Home from '../features/home/Home';
+import RoboticsTournament from '../features/tournament/RoboticsTournament';
+import GeekCulture from '../features/geek/GeekCulture';
+import Oxethon from '../features/oxethon/Oxethon';
+import Workshops from '../features/workshops/Workshops';
+import Footer from '../components/common/Footer';
+import ScrollToTop from '../components/common/ScrollToTop';
 
 const App: React.FC = () => {
   return (

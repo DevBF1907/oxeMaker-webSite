@@ -1,5 +1,6 @@
 
 import React from 'react';
+ 
 
 const Logo: React.FC<{ className?: string, showText?: boolean }> = ({ className = "w-32 h-32", showText = true }) => {
   return (
@@ -19,7 +20,7 @@ const Logo: React.FC<{ className?: string, showText?: boolean }> = ({ className 
       {/* Central Icon */}
       <div className="relative w-2/3 h-2/3 flex items-center justify-center p-2">
         <img 
-          src="https://storage.googleapis.com/static.aistudio.google.com/content/file-fsojx5vdinlf3wdvu7ahgj-0.png" 
+          src="/calango-logo.png"  
           alt="Calango Maker" 
           className="w-full h-full object-contain drop-shadow-2xl"
           referrerPolicy="no-referrer"

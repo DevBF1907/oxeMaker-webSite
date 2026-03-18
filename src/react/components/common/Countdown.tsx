@@ -1,6 +1,7 @@
 
+
 import React, { useState, useEffect, useCallback } from 'react';
-import { EVENT_DATE } from '../constants';
+import { EVENT_DATE } from '../../core/constants';
 
 const Countdown: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({

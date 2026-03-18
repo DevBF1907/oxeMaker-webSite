@@ -34,7 +34,7 @@ const Oxethon: React.FC = () => {
               <img 
                 src="https://picsum.photos/seed/oxethon/800/600" 
                 alt="Ôxethon" 
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all rounded-sm"
+                className="w-full h-auto transition-all rounded-sm"
               />
               <div className="mt-4 font-mono text-xs text-oxe-primary uppercase font-bold">
                 log_entry: oxethon_preview.jpg

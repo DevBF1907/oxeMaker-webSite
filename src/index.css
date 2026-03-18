@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cores da Identidade Ôxe-Maker */
+  --color-oxe-dark: #050D34;
+  --color-oxe-primary: #0030B5;
+  --color-oxe-blue: #0030B5;
+  --color-oxe-accent: #01B1FD;
+  --color-oxe-light-blue: #01B1FD;
+  --color-oxe-yellow: #FCC140;
+  --color-oxe-neutral: #1E292D;
+  --color-oxe-slate: #1E292D;
+  --color-oxe-orange: #FCC140;
+  --color-oxe-green: #01B1FD;
+  --color-oxe-red: #0030B5;
+  --color-oxe-sand: #fef3c7;
+
+  /* Fontes */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-logo: "Londrina Solid", cursive;
+  --font-display: "Londrina Solid", cursive;
+}
+
+:root {
+  background-color: #050D34;
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-image: 
+    linear-gradient(rgba(1, 177, 253, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 177, 253, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  min-height: 100vh;
+}
+
+/* Utilitários Customizados (Maker Design System) */
+
+.maker-card {
+  background: #1E292D;
+  border: 2px solid #01B1FD;
+  box-shadow: 4px 4px 0px #FCC140;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.maker-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #FCC140;
+}
+
+.maker-button {
+  background-color: var(--color-oxe-primary);
+  color: white;
+  border: none;
+  box-shadow: 0px 4px 0px #050D34;
+  transition: all 0.1s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.maker-button:hover {
+  filter: brightness(1.1);
+}
+
+.maker-button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px #050D34;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-rotate {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.tape {
+  background: var(--color-oxe-primary);
+  color: white;
+  transform: rotate(-2deg);
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050D34;
+}
+::-webkit-scrollbar-thumb {
+  background: #0030B5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #01B1FD;
+}

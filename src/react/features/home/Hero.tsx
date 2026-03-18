@@ -1,7 +1,6 @@
-
 import React from 'react';
-import Countdown from './Countdown';
-import Logo from './Logo';
+import Countdown from '../../components/common/Countdown';
+import Logo from '../../components/common/Logo';
 
 const Hero: React.FC = () => {
   return (
@@ -25,9 +24,10 @@ const Hero: React.FC = () => {
           </span>
         </div>
         
-        <h1 className="font-logo text-5xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-6">
-          <span className="text-white drop-shadow-[4px_4px_0px_#0030B5]">VIDA, ESCOLA</span><br/>
-          <span className="text-oxe-accent drop-shadow-[4px_4px_0px_#ffffff]">& COMUNIDADE</span>
+        <h1 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-5xl mx-auto uppercase">
+          <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Educação para a cidadania</span><br/>
+          <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]">Digital & Midiática</span><br/>
+          <span className="text-oxe-yellow text-3xl md:text-5xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">formando cidadãs e cidadãos críticos e responsáveis</span>
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-2xl text-white/80 font-mono leading-relaxed mb-12">

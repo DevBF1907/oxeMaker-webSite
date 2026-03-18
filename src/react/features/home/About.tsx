@@ -11,7 +11,7 @@ const About: React.FC = () => {
                 <img 
                   src="https://picsum.photos/800/600?random=40" 
                   alt="Maker Working" 
-                  className="w-full h-auto grayscale hover:grayscale-0 transition-all"
+                  className="w-full h-auto transition-all"
                 />
                 <div className="mt-4 font-mono text-xs text-oxe-accent uppercase font-bold">
                   log_entry: oficina_comunitaria_01.jpg

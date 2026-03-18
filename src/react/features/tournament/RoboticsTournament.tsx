@@ -59,7 +59,7 @@ const RoboticsTournament: React.FC = () => {
                   <img 
                     src={comp.image} 
                     alt={comp.title} 
-                    className="w-full h-auto grayscale hover:grayscale-0 transition-all rounded-sm"
+                    className="w-full h-auto transition-all rounded-sm"
                   />
                   <div className="mt-4 font-mono text-xs text-oxe-accent uppercase font-bold">
                     log_entry: {comp.title.toLowerCase().replace(/\s+/g, '_')}_preview.jpg

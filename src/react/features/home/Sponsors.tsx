@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SPONSORS } from '../constants';
+import { SPONSORS } from '../../core/constants';
 
 const Sponsors: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Sponsors: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {SPONSORS.filter(s => s.tier === 'Diamond').map((s, i) => (
-              <div key={i} className="aspect-[2/1] bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100 p-8">
+              <div key={i} className="aspect-[2/1] bg-white/5 rounded-3xl border border-white/10 flex items-center justify-center transition-all opacity-90 p-8">
                 <img src={s.logo} alt={s.name} className="max-h-full max-w-full object-contain" />
               </div>
             ))}
@@ -28,7 +28,7 @@ const Sponsors: React.FC = () => {
         {/* Lower Tiers */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {SPONSORS.filter(s => s.tier !== 'Diamond').map((s, i) => (
-            <div key={i} className="aspect-[2/1] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-50 hover:opacity-100 p-6">
+            <div key={i} className="aspect-[2/1] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center transition-all opacity-80 p-6">
                <img src={s.logo} alt={s.name} className="max-h-full max-w-full object-contain" />
             </div>
           ))}

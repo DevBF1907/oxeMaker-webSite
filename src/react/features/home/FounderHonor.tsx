@@ -9,12 +9,12 @@ const FounderHonor: React.FC = () => {
           <div className="w-full md:w-1/3 relative">
             <div className="maker-card p-4 -rotate-3 border-2 border-oxe-accent">
               <img 
-                src="https://picsum.photos/seed/founder/600/800" 
+                src="/img/lidy.jpeg" 
                 alt="Idealizadora do Ôxe-Maker" 
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all rounded-sm"
+                className="w-full h-auto transition-all rounded-sm"
               />
               <div className="mt-4 font-mono text-xs text-oxe-accent uppercase font-bold">
-                // idealizadora: lidyane_lira.jpg
+                // idealizadora: lidyane_lira.jpeg
               </div>
             </div>
             {/* Decorative elements */}

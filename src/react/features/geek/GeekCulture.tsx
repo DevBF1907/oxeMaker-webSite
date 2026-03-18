@@ -6,7 +6,7 @@ const GeekCulture: React.FC = () => {
     {
       title: 'Cosplay',
       description: 'Vista-se como seu personagem favorito de animes, games, filmes ou séries! O concurso de Cosplay premia a criatividade, a fidelidade ao personagem e a performance no palco.',
-      image: 'https://picsum.photos/seed/cosplay/800/600'
+      image: "/img/calango-cosplay.jpeg"
     },
     {
       title: 'Dança de K-pop',
@@ -49,7 +49,7 @@ const GeekCulture: React.FC = () => {
                   <img 
                     src={cat.image} 
                     alt={cat.title} 
-                    className="w-full h-auto grayscale hover:grayscale-0 transition-all rounded-sm"
+                    className="w-full h-auto transition-all rounded-sm"
                   />
                   <div className="mt-4 font-mono text-xs text-oxe-yellow uppercase font-bold">
                     log_entry: {cat.title.toLowerCase().replace(/\s+/g, '_')}_preview.jpg

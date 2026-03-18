@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SCHEDULE } from '../constants';
+import { SCHEDULE } from '../../core/constants';
 
 const Schedule: React.FC = () => {
   return (
