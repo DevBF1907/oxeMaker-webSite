@@ -6,24 +6,21 @@ const Footer: React.FC = () => {
     <footer className="py-12 px-6 bg-oxe-dark border-t border-white/5 font-mono text-xs">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-white/40">
         <div className="flex flex-col gap-2">
-           <p className="text-white/60 font-bold uppercase tracking-widest">/* ÔXE-MAKER-2026 */</p>
-           <p>Vidas, Escolas e Comunidades.</p>
-           <p>Metropolitana Norte - Recife, Brasil.</p>
+           <h4 className="font-logo text-3xl md:text-4xl text-white uppercase tracking-tight drop-shadow-[2px_2px_0px_#0030B5]">
+             ÔXE <span className="text-oxe-accent">MAKER</span> 2026
+           </h4>
+           <p className="font-mono text-oxe-yellow text-sm uppercase font-bold">
+             // formando cidadãs e cidadãos críticos e responsáveis
+           </p>
         </div>
         
-        <div className="flex gap-8 uppercase">
-          <a href="#" className="hover:text-oxe-accent transition-colors">Github</a>
-          <a href="#" className="hover:text-oxe-accent transition-colors">Insta</a>
-          <a href="#" className="hover:text-oxe-accent transition-colors">Discord</a>
-        </div>
         
-        <div className="text-right flex flex-col gap-2 items-center md:items-end">
-          <p>COMPILADO COM SUCESSO EM 2026</p>
-          <div className="flex gap-2">
-            <span className="w-2 h-2 rounded-full bg-oxe-accent"></span>
-            <span className="w-2 h-2 rounded-full bg-oxe-yellow"></span>
-            <span className="w-2 h-2 rounded-full bg-oxe-primary"></span>
-          </div>
+        <div className="flex items-center">
+          <img 
+            src="/img/logos claras.png" 
+            alt="Logos" 
+            className="h-12 md:h-16 w-auto object-contain"
+          />
         </div>
       </div>
     </footer>

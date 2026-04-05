@@ -42,6 +42,16 @@ export const SCHEDULE: ScheduleItem[] = [
   { time: '18:30', activity: 'Check-out & Planos', location: 'Palco Arena', description: 'O que a gente buildou hoje e o que vem por aí.' }
 ];
 
+export const TOURNAMENT_SCHEDULE: ScheduleItem[] = [
+  { time: '09:00', activity: 'Credenciamento Equipes', location: 'Arena de Robótica', description: 'Check-in das equipes, inspeção técnica e homologação dos robôs.' },
+  { time: '10:00', activity: 'Abertura Oficial', location: 'Arena de Robótica', description: 'Apresentação dos juízes, regras e sorteio das chaves de combate.' },
+  { time: '10:30', activity: 'Início das Rodadas: Buzz Line', location: 'Pista de Seguidores', description: 'Primeiras baterias das categorias Buzz Line e Buzz PRO.' },
+  { time: '13:00', activity: 'Intervalo para Almoço', location: 'Pátio Central', description: 'Pausa para recarregar as energias (e as baterias).' },
+  { time: '14:00', activity: 'Sumô e Combate', location: 'Dojo & Arena de Combate', description: 'Início das lutas de Sumô e Combate de Robôs. Muita adrenalina!' },
+  { time: '16:30', activity: 'Finais OBR', location: 'Arena OBR', description: 'As melhores equipes de resgate disputam o título regional.' },
+  { time: '17:30', activity: 'Premiação', location: 'Palco Principal', description: 'Entrega de troféus, medalhas e certificados para os vencedores.' }
+];
+
 export const SPONSORS: Sponsor[] = [
   { name: 'Sertão Dynamics', logo: 'https://picsum.photos/200/100?random=1', tier: 'Diamond' },
   { name: 'Cuscuz Chips', logo: 'https://picsum.photos/200/100?random=2', tier: 'Diamond' },

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { TOURNAMENT_SCHEDULE } from '../../core/constants';
 
 const RoboticsTournament: React.FC = () => {
   const competitions = [
@@ -7,6 +8,11 @@ const RoboticsTournament: React.FC = () => {
       title: 'Buzz Line',
       description: 'A competição de Buzz Line desafia os participantes a construir robôs que seguem uma linha com precisão e velocidade. É o teste definitivo de sensores e algoritmos de controle.',
       image: 'https://picsum.photos/seed/buzzline/800/600'
+    },
+    {
+      title: 'Buzz PRO',
+      description: 'A categoria Buzz PRO eleva o nível com obstáculos complexos, cruzamentos e velocidades muito maiores. Apenas para os robôs mais refinados.',
+      image: 'https://picsum.photos/seed/buzzpro/800/600'
     },
     {
       title: 'Sumô de Robôs',
@@ -46,6 +52,12 @@ const RoboticsTournament: React.FC = () => {
                   <button className="maker-button bg-oxe-primary text-white px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md">
                     Inscrever Equipe
                   </button>
+                  <a 
+                    href="#" 
+                    className="maker-button border-2 border-oxe-accent bg-transparent text-oxe-accent px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-accent hover:text-oxe-dark transition-colors"
+                  >
+                    Baixe o Edital
+                  </a>
                   <div className="maker-card p-2 inline-block -rotate-1">
                     <span className="font-mono text-xs text-oxe-accent uppercase font-bold px-4 py-2">
                       // categoria: {comp.title.toLowerCase().replace(/\s+/g, '_')}

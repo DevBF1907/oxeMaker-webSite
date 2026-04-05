@@ -21,6 +21,12 @@ const Oxethon: React.FC = () => {
               <button className="maker-button bg-oxe-primary text-white px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md">
                 Inscrever Equipe
               </button>
+              <a 
+                href="#" 
+                className="maker-button border-2 border-oxe-primary bg-transparent text-oxe-primary px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md hover:bg-oxe-primary hover:text-white transition-colors"
+              >
+                Baixe o Edital
+              </a>
               <div className="maker-card p-2 inline-block -rotate-1">
                 <span className="font-mono text-xs text-oxe-primary uppercase font-bold px-4 py-2">
                   // status: em_desenvolvimento.exe

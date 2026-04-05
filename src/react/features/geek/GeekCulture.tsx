@@ -36,6 +36,12 @@ const GeekCulture: React.FC = () => {
                   <button className="maker-button bg-oxe-yellow text-black px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md">
                     Inscrever-se
                   </button>
+                  <a 
+                    href="#" 
+                    className="maker-button border-2 border-oxe-yellow bg-transparent text-oxe-yellow px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-yellow hover:text-oxe-dark transition-colors"
+                  >
+                    Baixe o Edital
+                  </a>
                   <div className="maker-card p-2 inline-block -rotate-1">
                     <span className="font-mono text-xs text-oxe-yellow uppercase font-bold px-4 py-2">
                       // categoria: {cat.title.toLowerCase().replace(/\s+/g, '_')}
