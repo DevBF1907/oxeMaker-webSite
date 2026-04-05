@@ -17,21 +17,17 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-oxe-dark border-b border-white/10 px-4 md:px-8 py-3">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <Logo className="w-10 h-10 md:w-14 md:h-14" showText={false} />
-          <div className="font-logo text-lg md:text-xl uppercase tracking-tighter leading-none">
-            <span className="text-white block">ÔXE</span>
-            <span className="text-oxe-accent block">MAKER</span>
-          </div>
+        <Link to="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+          <Logo className="w-14 h-14 md:w-20 md:h-20" />
         </Link>
-        
+
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center space-x-8 font-mono text-[10px] uppercase font-bold text-white/40">
+        <div className="hidden lg:flex items-center space-x-12 font-mono text-xs uppercase font-bold text-white/40">
           {navLinks.map((link, index) => (
             <Link 
               key={link.to} 
               to={link.to} 
-              className={`${link.color} transition-all tracking-widest flex items-center gap-2 group`}
+              className={`${link.color} transition-all tracking-[0.2em] flex items-right gap-3 group`}
             >
               <span className="text-oxe-accent/30 group-hover:text-oxe-accent transition-colors">{String(index).padStart(2, '0')}</span>
               <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
