@@ -5,6 +5,7 @@ import Features from './Features';
 import Gallery from './Gallery';
 import FounderHonor from './FounderHonor';
 import Schedule from './Schedule';
+import Map from './Map';
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <About />
       <Features />
       <Schedule />
+      <Map />
       <Gallery />
     </>
   );
