@@ -1,17 +1,37 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const GeekCulture: React.FC = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   const categories = [
     {
+      id: 'cosplay',
       title: 'Cosplay',
       description: 'Vista-se como seu personagem favorito de animes, games, filmes ou séries! O concurso de Cosplay premia a criatividade, a fidelidade ao personagem e a performance no palco.',
-      image: "/img/calango-cosplay.jpeg"
+      image: "/img/calango-cosplay.jpeg",
+      formsLink: 'https://docs.google.com/forms/d/e/1FAIpQLSd4R3JcsSD_8gPA9DwBJ3HMes4C9Z5YwhQk57AadqcZn6wGug/viewform',
+      editalLink: '/editais/edital_cosplay.pdf'
     },
     {
+      id: 'kpop',
       title: 'Dança de K-pop',
-      description: 'Mostre seu talento na dança com as coreografias mais icônicas do K-pop! O concurso de dança reúne grupos e solistas em uma competição cheia de energia e estilo.',
-      image: 'https://picsum.photos/seed/kpop/800/600'
+      description: 'Mostre seu talento na dance com as coreografias mais icônicas do K-pop! O concurso de dança reúne grupos e solistas em uma competição cheia de energia e estilo.',
+      image: 'https://picsum.photos/seed/kpop/800/600',
+      formsLink: 'https://forms.gle/SEU_LINK_AQUI',
+      editalLink: '/editais/edital_kpop.pdf'
     }
   ];
 
@@ -24,7 +44,11 @@ const GeekCulture: React.FC = () => {
         
         <div className="space-y-24">
           {categories.map((cat, index) => (
-            <div key={index} className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+            <div 
+              key={index} 
+              id={cat.id}
+              className={`grid lg:grid-cols-2 gap-16 items-center scroll-mt-32 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+            >
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                 <h2 className="font-logo text-4xl md:text-6xl font-black mb-6 uppercase text-oxe-accent">
                   {cat.title}
@@ -33,12 +57,18 @@ const GeekCulture: React.FC = () => {
                   {cat.description}
                 </p>
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <button className="maker-button bg-oxe-yellow text-black px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md">
-                    Inscrever-se
-                  </button>
                   <a 
-                    href="#" 
-                    className="maker-button border-2 border-oxe-yellow bg-transparent text-oxe-yellow px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-yellow hover:text-oxe-dark transition-colors"
+                    href={cat.formsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="maker-button bg-oxe-yellow text-black px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:brightness-110 transition-all text-center"
+                  >
+                    Inscrever-se
+                  </a>
+                  <a 
+                    href={cat.editalLink}
+                    download
+                    className="maker-button border-2 border-oxe-yellow bg-transparent text-oxe-yellow px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-yellow hover:text-oxe-dark transition-colors text-center"
                   >
                     Baixe o Edital
                   </a>

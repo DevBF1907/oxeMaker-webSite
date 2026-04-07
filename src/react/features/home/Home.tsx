@@ -1,24 +1,36 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
 import About from './About';
 import Features from './Features';
 import Gallery from './Gallery';
 import FounderHonor from './FounderHonor';
-import Schedule from './Schedule';
-import Map from './Map';
 
 const Home: React.FC = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       <Hero />
-      <FounderHonor />
       <About />
       <Features />
-      <Schedule />
-      <Map />
+      <FounderHonor />
       <Gallery />
     </>
   );
 };
 
 export default Home;
+

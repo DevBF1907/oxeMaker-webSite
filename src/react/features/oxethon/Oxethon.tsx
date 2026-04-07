@@ -2,6 +2,9 @@
 import React from 'react';
 
 const Oxethon: React.FC = () => {
+  const formsLink = 'https://forms.gle/SEU_LINK_AQUI';
+  const editalLink = '/editais/edital_oxethon.pdf';
+
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="container mx-auto">
@@ -18,12 +21,18 @@ const Oxethon: React.FC = () => {
               O Ôxethon é a maratona de desenvolvimento e criação do Ôxe-Maker. Durante 48 horas, equipes multidisciplinares trabalham intensamente para criar soluções tecnológicas que impactem positivamente a comunidade local. É o lugar onde o código encontra a realidade e a inovação acontece na prática.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
-              <button className="maker-button bg-oxe-primary text-white px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md">
-                Inscrever Equipe
-              </button>
               <a 
-                href="#" 
-                className="maker-button border-2 border-oxe-primary bg-transparent text-oxe-primary px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md hover:bg-oxe-primary hover:text-white transition-colors"
+                href={formsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="maker-button bg-oxe-primary text-white px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md hover:brightness-110 transition-all text-center"
+              >
+                Inscrever Equipe
+              </a>
+              <a 
+                href={editalLink}
+                download
+                className="maker-button border-2 border-oxe-primary bg-transparent text-oxe-primary px-8 py-4 font-logo text-2xl uppercase rounded-sm shadow-md hover:bg-oxe-primary hover:text-white transition-colors text-center"
               >
                 Baixe o Edital
               </a>
