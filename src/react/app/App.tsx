@@ -6,6 +6,7 @@ import RoboticsTournament from '../features/tournament/RoboticsTournament';
 import GeekCulture from '../features/geek/GeekCulture';
 import Oxethon from '../features/oxethon/Oxethon';
 import Workshops from '../features/workshops/Workshops';
+import Visit from '../features/visit/Visit';
 import Footer from '../components/common/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/visita" element={<Visit />} />
             <Route path="/torneio" element={<RoboticsTournament />} />
             <Route path="/geek" element={<GeekCulture />} />
             <Route path="/oxethon" element={<Oxethon />} />
