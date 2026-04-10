@@ -30,11 +30,11 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { to: "/", label: "INÍCIO", color: "hover:text-white" },
-    { to: "/visita", label: "VISITA", color: "hover:text-oxe-accent", hasDropdown: true, dropdownItems: eventInfo, dropdownState: eventDropdown, setDropdown: setEventDropdown },
-    { to: "/torneio", label: "ROBÓTICA", color: "hover:text-oxe-accent", hasDropdown: true, dropdownItems: competitions, dropdownState: roboticsDropdown, setDropdown: setRoboticsDropdown },
-    { to: "/oficinas", label: "OFICINAS", color: "hover:text-oxe-primary" },
+    { to: "/visita", label: "VISITA", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: eventInfo, dropdownState: eventDropdown, setDropdown: setEventDropdown },
+    { to: "/torneio", label: "ROBÓTICA", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: competitions, dropdownState: roboticsDropdown, setDropdown: setRoboticsDropdown },
+    { to: "/oficinas", label: "OFICINAS", color: "hover:text-oxe-yellow" },
     { to: "/geek", label: "GEEK", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: geekCategories, dropdownState: geekDropdown, setDropdown: setGeekDropdown },
-    { to: "/oxethon", label: "OXETHON", color: "hover:text-oxe-primary" },
+    { to: "/oxethon", label: "OXETHON", color: "hover:text-oxe-yellow" },
   ];
 
   return (
@@ -45,9 +45,10 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center space-x-12 font-mono text-xs uppercase font-bold text-white/40">
+        <div className="hidden lg:flex items-center space-x-12 font-logo text-sm uppercase font-black text-white/40">
           {navLinks.map((link, index) => {
             const hasDropdown = link.hasDropdown;
+            const hoverColor = link.color.replace('hover:', '');
             return (
               <div 
                 key={link.label} 
@@ -57,9 +58,9 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   to={link.to}
-                  className={`${link.color} transition-all tracking-[0.2em] flex items-center gap-3 group cursor-pointer text-left py-4`}
+                  className={`${link.color} transition-all tracking-wider flex items-center gap-3 group cursor-pointer text-left py-4`}
                 >
-                  <span className={`${link.color.replace('hover:', '')}/30 group-hover:${link.color.replace('hover:', '')} transition-colors`}>{String(index).padStart(2, '0')}</span>
+                  <span className={`font-mono text-[10px] ${hoverColor}/30 group-hover:${hoverColor} transition-colors font-bold`}>{String(index).padStart(2, '0')}</span>
                   <span className="group-hover:translate-x-1 transition-transform flex items-center gap-1">
                     {link.label}
                     {hasDropdown && (
@@ -119,66 +120,69 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="flex flex-col space-y-6">
-            {navLinks.map((link, index) => (
-              <div key={link.label}>
-                {link.hasDropdown ? (
-                  <>
-                    <button
-                      onClick={() => link.setDropdown!(!link.dropdownState)}
-                      className="group flex items-center gap-4 w-full"
+            {navLinks.map((link, index) => {
+              const hoverColor = link.color.replace('hover:', '');
+              return (
+                <div key={link.label}>
+                  {link.hasDropdown ? (
+                    <>
+                      <button
+                        onClick={() => link.setDropdown!(!link.dropdownState)}
+                        className="group flex items-center gap-4 w-full"
+                      >
+                        <span className={`font-mono text-xs ${hoverColor}/40`}>{String(index).padStart(2, '0')}</span>
+                        <span className={`font-logo text-3xl uppercase text-white group-hover:${hoverColor} transition-colors tracking-tight`}>
+                          {link.label}
+                        </span>
+                        <svg
+                          className={`w-4 h-4 ${hoverColor}/50 transition-transform duration-200 ml-auto ${link.dropdownState ? 'rotate-180' : ''}`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+
+                      {/* Dropdown sub-items */}
+                      {link.dropdownState && (
+                        <div className="ml-10 mt-2 space-y-1 border-l-2 border-white/10 pl-3">
+                          <Link
+                            to={link.to}
+                            onClick={() => setIsOpen(false)}
+                            className="block py-1 font-mono text-xs text-white/30 hover:text-white transition-colors"
+                          >
+                            ver página completa →
+                          </Link>
+                          {link.dropdownItems!.map((item) => (
+                            <Link
+                              key={item.id}
+                              to={link.to === "/" ? `/#${item.id}` : `${link.to}#${item.id}`}
+                              onClick={() => setIsOpen(false)}
+                              className={`block w-full text-left py-2 px-2 text-white/60 group-hover:${hoverColor} transition-colors font-logo text-sm uppercase font-bold`}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={link.to}
+                      className="group flex items-center gap-4"
+                      onClick={() => setIsOpen(false)}
                     >
-                      <span className="font-mono text-xs text-oxe-accent/40">{String(index).padStart(2, '0')}</span>
-                      <span className="font-logo text-3xl uppercase text-white group-hover:text-oxe-accent transition-colors tracking-tight">
+                      <span className={`font-mono text-xs ${hoverColor}/40`}>{String(index).padStart(2, '0')}</span>
+                      <span className={`font-logo text-3xl uppercase text-white group-hover:${hoverColor} transition-colors tracking-tight`}>
                         {link.label}
                       </span>
-                      <svg
-                        className={`w-4 h-4 text-oxe-accent/50 transition-transform duration-200 ml-auto ${link.dropdownState ? 'rotate-180' : ''}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2.5}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-
-                    {/* Dropdown sub-items */}
-                    {link.dropdownState && (
-                      <div className="ml-10 mt-2 space-y-1 border-l-2 border-white/10 pl-3">
-                        <Link
-                          to={link.to}
-                          onClick={() => setIsOpen(false)}
-                          className="block py-1 font-mono text-xs text-white/30 hover:text-white transition-colors"
-                        >
-                          ver página completa →
-                        </Link>
-                        {link.dropdownItems!.map((item) => (
-                          <Link
-                            key={item.id}
-                            to={link.to === "/" ? `/#${item.id}` : `${link.to}#${item.id}`}
-                            onClick={() => setIsOpen(false)}
-                            className="block w-full text-left py-2 px-2 text-white/60 hover:text-oxe-accent transition-colors font-logo text-sm uppercase font-bold"
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={link.to}
-                    className="group flex items-center gap-4"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="font-mono text-xs text-oxe-accent/40">{String(index).padStart(2, '0')}</span>
-                    <span className="font-logo text-3xl uppercase text-white group-hover:text-oxe-accent transition-colors tracking-tight">
-                      {link.label}
-                    </span>
-                  </Link>
-                )}
-              </div>
-            ))}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-auto">
