@@ -1,7 +1,11 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Workshops: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const workshops = [
     {
       title: 'Soldagem para Iniciantes',
@@ -34,50 +38,59 @@ const Workshops: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6">
-      <div className="container mx-auto">
-        <h1 className="font-logo text-6xl md:text-8xl font-black mb-12 uppercase text-white text-center">
-          Nossas <span className="text-oxe-primary">Oficinas</span>
-        </h1>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {workshops.map((workshop, index) => (
-            <div key={index} className="maker-card p-8 flex flex-col h-full border-2 border-oxe-primary/30 hover:border-oxe-primary transition-colors">
-              <div className="flex justify-between items-center mb-6 gap-2">
-                <div className="bg-oxe-primary text-white px-2 py-1 font-mono text-[10px] md:text-xs font-bold uppercase whitespace-nowrap">
-                  {workshop.day}
-                </div>
-                <div className="font-mono text-base md:text-xl text-oxe-accent font-bold whitespace-nowrap">
-                  {workshop.time}
-                </div>
-              </div>
-              
-              <h2 className="font-logo text-4xl font-black mb-2 uppercase text-white leading-tight">
-                {workshop.title}
-              </h2>
+    <div className="pt-20">
+      <div className="bg-oxe-dark border-b border-white/5 py-16 px-6">
+        <div className="container mx-auto text-center">
+          <h1 className="font-logo text-6xl md:text-8xl font-black mb-4 uppercase text-white">
+            Nossas <span className="text-oxe-yellow">Oficinas</span>
+          </h1>
+          <p className="font-mono text-white/50 max-w-2xl mx-auto">
+            Aprenda na prática com quem entende do assunto. Oficinas pensadas para todos os níveis, do iniciante ao avançado.
+          </p>
+        </div>
+      </div>
 
-              <div className="mb-6 flex items-center gap-2">
-                <span className="font-mono text-[10px] text-oxe-yellow uppercase font-bold tracking-widest">
-                  // oficineiro:
-                </span>
-                <span className="font-mono text-sm text-white/90 font-bold">
-                  {workshop.instructor}
-                </span>
+      <div className="py-24 px-6">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {workshops.map((workshop, index) => (
+              <div key={index} className="maker-card p-8 flex flex-col h-full border-2 border-oxe-accent/30 hover:border-oxe-accent transition-colors">
+                <div className="flex justify-between items-center mb-6 gap-2">
+                  <div className="bg-oxe-primary text-white px-2 py-1 font-mono text-[10px] md:text-xs font-bold uppercase whitespace-nowrap">
+                    {workshop.day}
+                  </div>
+                  <div className="font-mono text-base md:text-xl text-oxe-accent font-bold whitespace-nowrap">
+                    {workshop.time}
+                  </div>
+                </div>
+                
+                <h2 className="font-logo text-4xl font-black mb-2 uppercase text-oxe-yellow leading-tight">
+                  {workshop.title}
+                </h2>
+
+                <div className="mb-6 flex items-center gap-2">
+                  <span className="font-mono text-[10px] text-oxe-accent uppercase font-bold tracking-widest">
+                    // oficineiro:
+                  </span>
+                  <span className="font-mono text-sm text-white/90 font-bold">
+                    {workshop.instructor}
+                  </span>
+                </div>
+                
+                <div className="w-full h-px bg-white/10 mb-6"></div>
+                
+                <p className="text-white/80 text-lg mb-10 flex-grow leading-relaxed">
+                  {workshop.description}
+                </p>
+                
+                <div className="flex justify-center mt-auto">
+                  <button className="maker-button bg-oxe-primary text-white px-12 py-4 font-logo text-2xl uppercase rounded-sm shadow-md w-full sm:w-auto">
+                    Garantir Vaga
+                  </button>
+                </div>
               </div>
-              
-              <div className="w-full h-px bg-white/10 mb-6"></div>
-              
-              <p className="text-white/70 text-lg mb-10 flex-grow leading-relaxed">
-                {workshop.description}
-              </p>
-              
-              <div className="flex justify-center mt-auto">
-                <button className="maker-button bg-oxe-primary text-white px-12 py-4 font-logo text-2xl uppercase rounded-sm shadow-md w-full sm:w-auto">
-                  Garantir Vaga
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

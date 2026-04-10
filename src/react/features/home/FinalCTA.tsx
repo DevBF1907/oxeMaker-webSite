@@ -13,7 +13,7 @@ const FinalCTA: React.FC = () => {
             // fim_do_arquivo.h
           </div>
           <h2 className="font-logo text-6xl md:text-9xl font-black mb-10 leading-none uppercase text-white drop-shadow-xl">
-            CHEGA NO <br/> <span className="text-oxe-accent">MUTIRÃO!</span>
+            CHEGA NO <br/> <span className="text-oxe-yellow">MUTIRÃO!</span>
           </h2>
           <p className="font-mono text-lg md:text-2xl text-white/80 mb-12">
             O Ôxe-Maker 2026 tá chamando. <br className="hidden md:block"/>

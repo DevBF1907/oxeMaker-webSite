@@ -25,7 +25,7 @@ const Visit: React.FC = () => {
       <div className="bg-oxe-dark border-b border-white/5 py-16 px-6">
         <div className="container mx-auto text-center">
           <h1 className="font-logo text-6xl md:text-8xl font-black mb-4 uppercase text-white">
-            Informações de <span className="text-oxe-accent">Visita</span>
+            Informações de <span className="text-oxe-yellow">Visita</span>
           </h1>
           <p className="font-mono text-white/50 max-w-2xl mx-auto">
             Prepare-se para a melhor experiência maker do ano. Confira o cronograma das atividades e localize-se no mapa do evento.
