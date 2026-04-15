@@ -9,9 +9,9 @@ const About: React.FC = () => {
           <div className="order-2 lg:order-1 relative">
              <div className="maker-card p-4 rotate-2">
                 <img 
-                  src="https://picsum.photos/800/600?random=40" 
+                  src="/public/calango-logo.png" 
                   alt="Maker Working" 
-                  className="w-full h-auto transition-all"
+                  className="w-full h-auto transition-all background-blue"
                 />
                 <div className="mt-4 font-mono text-xs text-oxe-accent uppercase font-bold">
                   log_entry: oficina_comunitaria_01.jpg
@@ -24,18 +24,21 @@ const About: React.FC = () => {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="font-logo text-6xl md:text-8xl font-black mb-8 leading-tight uppercase text-white">
-              SOBRE O <span className="text-oxe-accent">ÔXE-MAKER</span>
+            <h2 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 uppercase">
+              <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Sobre o</span>
+              <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]"> Ôxe-Maker</span><br/>
+              <span className="text-oxe-yellow text-2xl md:text-3xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">Transformando ideias em realidade</span>
             </h2>
             <div className="space-y-6 text-white/80 text-xl font-medium leading-relaxed">
               <p>
-                O **ÔXE-MAKER** não é palestra de gravata. É mutirão! 
-                A gente junta quem sabe com quem quer aprender pra resolver o aperreio da comunidade usando bit e parafuso.
+              O ÔXE Maker nasce para transformar ideias em realidade. Como o maior evento de robótica e cultura maker em linha reta da GRE Metropolitana Norte/PE, reunimos mentes criativas para construir, colaborar e inovar juntos.
+
+Aqui, aprender é fazer. Criar é compartilhar.
+
+Nossa linguagem é o código, mas nosso impacto vai muito além.
+
               </p>
-              <p>
-                Nossa escola é a bancada. Nossa linguagem é o código. Nossa meta? **Justiça Socioambiental** na prática, 
-                mostrando que o povo da Metropolitana Norte tem o DNA da invenção.
-              </p>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 font-mono text-sm">
                 <div className="flex items-center gap-3 p-3 bg-white/5 border-l-4 border-oxe-primary">
                    <span className="text-oxe-primary font-bold">01_</span> Vidas reais

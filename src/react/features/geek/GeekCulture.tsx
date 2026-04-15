@@ -34,6 +34,13 @@ const GeekCulture: React.FC = () => {
       image: '/img/K-pop.png',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
       editalLink: '/editais/edital_kpop.pdf'
+    },
+    {
+      id: 'justdance',
+      title: 'Just Dance',
+      description: 'Prepare-se para brilhar na pista com o Just Dance! Mostre seus melhores movimentos e divirta-se em uma competição cheia de ritmo e energia.',
+      image: 'https://picsum.photos/seed/justdance/800/600',
+      formsLink: 'https://forms.gle/SEU_LINK_AQUI'
     }
   ];
 
@@ -41,8 +48,9 @@ const GeekCulture: React.FC = () => {
     <div className="pt-20">
       <div className="bg-oxe-dark border-b border-white/5 py-16 px-6">
         <div className="container mx-auto text-center">
-          <h1 className="font-logo text-6xl md:text-8xl font-black mb-4 uppercase text-white">
-            Cultura <span className="text-oxe-yellow">GEEK</span>
+          <h1 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-5xl mx-auto uppercase">
+            <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Cultura</span>
+            <span className="text-oxe-yellow drop-shadow-[3px_3px_0px_#050D34]"> GEEK</span>
           </h1>
           <p className="font-mono text-white/50 max-w-2xl mx-auto">
             O ponto de encontro da criatividade e da paixão. Celebre o universo geek com desfiles, dança e muita diversão.
@@ -67,21 +75,25 @@ const GeekCulture: React.FC = () => {
                     {cat.description}
                   </p>
                   <div className="flex flex-wrap gap-4 mb-8">
-                    <a 
-                      href={cat.formsLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="maker-button bg-oxe-primary text-white px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:brightness-110 transition-all text-center"
-                    >
-                      Inscrever-se
-                    </a>
-                    <a 
-                      href={cat.editalLink}
-                      download
-                      className="maker-button border-2 border-oxe-accent bg-transparent text-oxe-accent px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-accent hover:text-oxe-dark transition-colors text-center"
-                    >
-                      Baixe o Edital
-                    </a>
+                    {cat.formsLink && (
+                      <a 
+                        href={cat.formsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="maker-button bg-oxe-primary text-white px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:brightness-110 transition-all text-center"
+                      >
+                        Inscrever-se
+                      </a>
+                    )}
+                    {cat.editalLink && (
+                      <a 
+                        href={cat.editalLink}
+                        download
+                        className="maker-button border-2 border-oxe-accent bg-transparent text-oxe-accent px-6 py-3 font-logo text-xl uppercase rounded-sm shadow-md hover:bg-oxe-accent hover:text-oxe-dark transition-colors text-center"
+                      >
+                        Baixe o Edital
+                      </a>
+                    )}
                     <div className="maker-card p-2 inline-block -rotate-1">
                       <span className="font-mono text-xs text-oxe-accent uppercase font-bold px-4 py-2">
                         // categoria: {cat.title.toLowerCase().replace(/\s+/g, '_')}

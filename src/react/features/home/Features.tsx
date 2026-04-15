@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FEATURES } from '../../core/constants';
 
@@ -7,7 +6,7 @@ const Features: React.FC = () => {
     <section id="atividades" className="py-24 bg-black/20 px-6">
       <div className="container mx-auto">
         <div className="mb-20">
-          <h2 className="font-logo text-6xl md:text-8xl font-black mb-6 uppercase">
+          <h2 className="font-logo text-4xl sm:text-6xl md:text-8xl font-black mb-6 uppercase">
             Mão na <span className="text-oxe-accent">Massa</span>
           </h2>
           <p className="font-mono text-white/60 text-lg">

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         
         <div className="flex items-center">
           <img 
-            src="/img/calango-logo.png" 
+            src="/img/logos claras.png" 
             alt="Logos" 
             className="h-12 md:h-16 w-auto object-contain"
           />

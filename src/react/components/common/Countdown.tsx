@@ -40,10 +40,10 @@ const Countdown: React.FC = () => {
 
   return (
     <div className="flex flex-wrap justify-center gap-4 mt-12">
-      <TimerUnit value={timeLeft.days} label="Dias" color="text-oxe-accent" />
+      <TimerUnit value={timeLeft.days} label="Dias" color="text-oxe-yellow" />
       <TimerUnit value={timeLeft.hours} label="Horas" color="text-oxe-yellow" />
-      <TimerUnit value={timeLeft.minutes} label="Minutos" color="text-oxe-accent" />
-      <TimerUnit value={timeLeft.seconds} label="Segundos" color="text-oxe-primary" />
+      <TimerUnit value={timeLeft.minutes} label="Minutos" color="text-oxe-yellow" />
+      <TimerUnit value={timeLeft.seconds} label="Segundos" color="text-oxe-yellow" />
     </div>
   );
 };
