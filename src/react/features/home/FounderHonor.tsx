@@ -26,8 +26,10 @@ const FounderHonor: React.FC = () => {
             <div className="inline-block mb-6 px-4 py-2 bg-oxe-primary text-white font-mono text-xs font-bold uppercase rotate-1">
               Homenagem Especial
             </div>
-            <h2 className="font-logo text-5xl md:text-7xl font-black mb-8 leading-tight uppercase text-white">
-              A Mente por trás do <span className="text-oxe-accent">Ôxe-Maker</span>
+            <h2 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 uppercase">
+              <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">A Mente por</span>
+              <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]"> Trás do Oxe-Maker</span><br/>
+              <span className="text-oxe-yellow text-2xl md:text-3xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">Nossa idealizadora e alma do projeto</span>
             </h2>
             <div className="space-y-6 text-white/80 text-xl font-medium leading-relaxed italic">
               <p>
@@ -37,7 +39,7 @@ const FounderHonor: React.FC = () => {
                 — Lidyane Lira
               </p>
               <p className="not-italic text-lg text-white/60 font-mono">
-                Idealizadora e alma do projeto, cuja visão de unir Vidas, Escolas e Comunidade transformou a Metropolitana Norte em um polo de inovação popular.
+                Idealizadora e alma do projeto, cuja visão de unir Vidas, Escolas e Comunidade transformou a Metropolitana Norte em um polo de inovação estudantil.
               </p>
             </div>
           </div>

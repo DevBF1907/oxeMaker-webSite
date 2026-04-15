@@ -8,7 +8,11 @@ const Gallery: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
-            <h2 className="text-4xl md:text-5xl font-logo font-black mb-2 uppercase italic text-white">Galeria de <span className="text-oxe-accent">Evolução</span></h2>
+            <h2 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-2 uppercase italic">
+              <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Galeria de</span>
+              <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]"> Evolução</span><br/>
+              <span className="text-oxe-yellow text-2xl md:text-3xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">Momentos marcantes do nosso legado</span>
+            </h2>
             <p className="text-white/50">Momentos marcantes das edições anteriores.</p>
           </div>
           <button className="text-sm font-bold text-oxe-accent uppercase tracking-widest border-b-2 border-oxe-accent/20 hover:border-oxe-accent transition-all pb-1">

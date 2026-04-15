@@ -13,8 +13,9 @@ const Oxethon: React.FC = () => {
     <div className="pt-20">
       <div className="bg-oxe-dark border-b border-white/5 py-16 px-6">
         <div className="container mx-auto text-center">
-          <h1 className="font-logo text-6xl md:text-8xl font-black mb-4 uppercase text-white">
-            O <span className="text-oxe-yellow">ÔXETHON</span>
+          <h1 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-5xl mx-auto uppercase">
+            <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">O </span>
+            <span className="text-oxe-yellow drop-shadow-[3px_3px_0px_#050D34]">ÔXETHON</span>
           </h1>
           <p className="font-mono text-white/50 max-w-2xl mx-auto">
             A maratona de desenvolvimento e criação do Ôxe-Maker. 48 horas de inovação intensa para impactar a comunidade.
