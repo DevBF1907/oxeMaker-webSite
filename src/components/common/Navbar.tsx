@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from './Logo';
+import { Link, useLocation } from 'react-router-dom';
+import Logo from '@/components/common/Logo';
 
 const competitions = [
   { id: 'buzzline', title: 'Buzz Line', to: '/torneio#buzzline' },
@@ -42,6 +42,26 @@ const eventCategories = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [eventsDropdown, setEventsDropdown] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const handleOpenMenu = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setEventsDropdown(true);
+      if (window.innerWidth < 1024) {
+        setIsOpen(true);
+      }
+    };
+
+    window.addEventListener('open-oxe-events', handleOpenMenu);
+    return () => window.removeEventListener('open-oxe-events', handleOpenMenu);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setEventsDropdown(false);
+    setIsOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { to: "/", label: "INÍCIO", color: "hover:text-white" },
@@ -50,6 +70,11 @@ const Navbar: React.FC = () => {
     { to: "#", label: "EVENTOS", color: "hover:text-oxe-yellow", hasDropdown: true, isMega: true, dropdownState: eventsDropdown, setDropdown: setEventsDropdown },
     { to: "/sobre", label: "SOBRE", color: "hover:text-oxe-yellow" },
   ];
+
+  const triggerEventsMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-oxe-events'));
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-oxe-dark border-b border-white/10 px-4 md:px-8 py-3">
@@ -128,12 +153,12 @@ const Navbar: React.FC = () => {
           })}
           
           {/* Inscreva-se Button Desktop */}
-          <Link 
-            to="/inscricao"
+          <button 
+            onClick={triggerEventsMenu}
             className="bg-oxe-yellow text-black px-6 py-2.5 font-logo text-base uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-200"
           >
             Inscreva-se
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -230,13 +255,12 @@ const Navbar: React.FC = () => {
             })}
             
             {/* Inscreva-se Button Mobile */}
-            <Link 
-              to="/inscricao"
+            <button 
+              onClick={triggerEventsMenu}
               className="mt-4 bg-oxe-yellow text-black px-6 py-4 font-logo text-2xl uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-200 text-center"
-              onClick={() => setIsOpen(false)}
             >
               Inscreva-se
-            </Link>
+            </button>
           </div>
 
           <div className="mt-auto">

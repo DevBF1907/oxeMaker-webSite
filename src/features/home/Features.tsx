@@ -7,7 +7,8 @@ const Features: React.FC = () => {
       <div className="container mx-auto">
         <div className="mb-20">
           <h2 className="font-logo text-4xl sm:text-6xl md:text-8xl font-black mb-6 uppercase">
-            Mão na <span className="text-oxe-accent">Massa</span>
+           <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">  Mão na </span>
+              <span className="text-oxe-yellow drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]"> Massa </span>
           </h2>
         
         </div>

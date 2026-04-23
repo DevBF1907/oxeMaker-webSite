@@ -31,7 +31,7 @@ const GeekCulture: React.FC = () => {
       id: 'kpop',
       title: 'Dança de K-pop',
       description: 'Mostre seu talento na dance com as coreografias mais icônicas do K-pop! O concurso de dança reúne grupos e solistas em uma competição cheia de energia e estilo.',
-      image: '/img/K-pop.png',
+      image: '/img/k-pop.png',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
       editalLink: '/editais/edital_kpop.pdf'
     },
