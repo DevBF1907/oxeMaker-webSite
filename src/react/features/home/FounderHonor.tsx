@@ -9,7 +9,7 @@ const FounderHonor: React.FC = () => {
           <div className="w-full md:w-1/3 relative">
             <div className="maker-card p-4 -rotate-3 border-2 border-oxe-accent">
               <img 
-                src="/img/lidy.jpeg" 
+                src="/img/fotoLidy.jpeg" 
                 alt="Idealizadora do Ôxe-Maker" 
                 className="w-full h-auto transition-all rounded-sm"
               />
@@ -28,16 +28,18 @@ const FounderHonor: React.FC = () => {
             </div>
             <h2 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 uppercase">
               <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">A Mente por</span>
-              <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]"> Trás do Oxe-Maker</span><br/>
-              <span className="text-oxe-yellow text-2xl md:text-3xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">Nossa idealizadora e alma do projeto</span>
+                <span className="text-oxe-yellow drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]"> TRÁS DO ÔXE MAKER </span><br/>
+<span className="text-white text-2xl md:text-3xl block mt-4 font-semibold border-b-2 border-oxe-yellow inline-block pb-1">
+  Idealizadora e alma do projeto
+</span>
             </h2>
             <div className="space-y-6 text-white/80 text-xl font-medium leading-relaxed italic">
               <p>
                 "O Ôxe-Maker nasceu de um sonho de ver a tecnologia como ferramenta de libertação e transformação social na nossa região. Não é sobre máquinas, é sobre pessoas buildando o próprio destino."
               </p>
-              <p className="not-italic font-bold text-oxe-yellow text-2xl">
-                — Lidyane Lira
-              </p>
+              <p className="not-italic font-bold text-oxe-yellow text-2xl text-right">
+  — Lidyane Lira
+</p>
               <p className="not-italic text-lg text-white/60 font-mono">
                 Idealizadora e alma do projeto, cuja visão de unir Vidas, Escolas e Comunidade transformou a Metropolitana Norte em um polo de inovação estudantil.
               </p>

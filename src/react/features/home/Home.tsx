@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
-import About from './About';
 import Features from './Features';
 import Gallery from './Gallery';
 import FounderHonor from './FounderHonor';
@@ -24,7 +23,6 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
-      <About />
       <Features />
       <FounderHonor />
       <Gallery />
