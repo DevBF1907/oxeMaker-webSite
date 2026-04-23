@@ -46,7 +46,7 @@ const RoboticsTournament: React.FC = () => {
       id: 'combate',
       title: 'Combate de Robôs',
       description: 'Destruição total na arena! Robôs equipados com armas ativas lutam até que um seja imobilizado. É a categoria mais emocionante e barulhenta do torneio.',
-      image: 'https://picsum.photos/seed/combat/800/600',
+      image: '/img/cupim-calango.jpeg',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
       editalLink: 'https://robocore-eventos.s3.sa-east-1.amazonaws.com/public/Regras+-+Combate+Cupim.pdf'
     },

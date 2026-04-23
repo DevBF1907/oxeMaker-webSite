@@ -42,6 +42,7 @@ const eventCategories = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [eventsDropdown, setEventsDropdown] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -61,6 +62,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     setEventsDropdown(false);
     setIsOpen(false);
+    setActiveCategory(null);
   }, [pathname]);
 
   const navLinks = [
@@ -93,7 +95,12 @@ const Navbar: React.FC = () => {
                 key={link.label} 
                 className="relative group/nav"
                 onMouseEnter={() => hasDropdown && link.setDropdown!(true)}
-                onMouseLeave={() => hasDropdown && link.setDropdown!(false)}
+                onMouseLeave={() => {
+                  if (hasDropdown) {
+                    link.setDropdown!(false);
+                    setActiveCategory(null);
+                  }
+                }}
               >
                 <Link
                   to={link.to}
@@ -117,35 +124,78 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 {/* Desktop Dropdown */}
-                {hasDropdown && (
-                  <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-300 ${link.dropdownState ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-                    {link.isMega && (
-                      <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-[400px] p-6 grid grid-cols-2 gap-8">
-                        {eventCategories.map((cat) => (
-                          <div key={cat.title}>
-                            <Link 
-                              to={cat.to}
-                              className="block font-logo text-sm text-oxe-yellow mb-3 hover:translate-x-1 transition-transform uppercase tracking-widest"
-                              onClick={() => setEventsDropdown(false)}
-                            >
-                              {cat.title}
-                            </Link>
-                            <div className="flex flex-col space-y-2">
-                              {cat.items.map(item => (
+                {hasDropdown && link.isMega && (
+                  <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-300 
+                    ${link.dropdownState ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+
+                    <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-[420px] p-6">
+
+                      {/* 🔹 NÍVEL 1 - CATEGORIAS */}
+                      {!activeCategory && (
+                        <div className="flex flex-col space-y-4">
+                          {eventCategories.map((cat) => {
+                            if (cat.items.length > 0) {
+                              return (
+                                <button
+                                  key={cat.title}
+                                  onClick={() => setActiveCategory(cat.title)}
+                                  className="flex justify-between items-center text-left group"
+                                >
+                                  <span className="font-logo text-lg text-white group-hover:text-oxe-yellow transition uppercase">
+                                    {cat.title}
+                                  </span>
+                                  <span className="text-white/40 group-hover:text-oxe-yellow">
+                                    →
+                                  </span>
+                                </button>
+                              );
+                            }
+                            return (
+                              <Link
+                                key={cat.title}
+                                to={cat.to}
+                                onClick={() => setEventsDropdown(false)}
+                                className="block font-logo text-lg text-white hover:text-oxe-yellow transition uppercase"
+                              >
+                                {cat.title}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {/* 🔹 NÍVEL 2 - ITENS */}
+                      {activeCategory && (
+                        <div>
+                          {/* botão voltar */}
+                          <button
+                            onClick={() => setActiveCategory(null)}
+                            className="mb-4 text-sm text-white/50 hover:text-white"
+                          >
+                            ← Voltar
+                          </button>
+
+                          <div className="flex flex-col space-y-3">
+                            {eventCategories
+                              .find(cat => cat.title === activeCategory)
+                              ?.items.map(item => (
                                 <Link
                                   key={item.id}
                                   to={item.to}
-                                  className="text-[10px] text-white/50 hover:text-white uppercase tracking-wider font-mono transition-colors"
-                                  onClick={() => setEventsDropdown(false)}
+                                  className="text-white/70 hover:text-oxe-yellow uppercase font-mono text-sm"
+                                  onClick={() => {
+                                    setEventsDropdown(false);
+                                    setActiveCategory(null);
+                                  }}
                                 >
                                   {item.title}
                                 </Link>
                               ))}
-                            </div>
                           </div>
-                        ))}
-                      </div>
-                    )}
+                        </div>
+                      )}
+
+                    </div>
                   </div>
                 )}
               </div>
