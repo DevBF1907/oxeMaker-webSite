@@ -3,16 +3,8 @@ import React from 'react';
 
 const Map: React.FC = () => {
   return (
-    <section id="mapa-evento" className="py-24 px-6 bg-oxe-dark/50">
+    <section id="mapa-evento" className="py-12 px-6">
       <div className="container mx-auto">
-        <div className="mb-16 text-right">
-          <h2 className="font-logo text-5xl md:text-7xl font-black mb-4 uppercase text-white">
-            Mapa do <span className="text-oxe-yellow">Evento</span>
-          </h2>
-          <div className="h-2 w-24 bg-oxe-yellow mb-4 ml-auto"></div>
-          <p className="font-mono text-white/60">location: ETE José de Alencar</p>
-        </div>
-
         <div className="relative">
           <div className="maker-card p-4 bg-oxe-dark border-2 border-oxe-yellow/30 overflow-hidden">
             <div className="aspect-video bg-white/5 flex items-center justify-center relative overflow-hidden group">

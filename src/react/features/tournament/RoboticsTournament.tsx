@@ -65,7 +65,7 @@ const RoboticsTournament: React.FC = () => {
       <div className="container mx-auto">
         <h1 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-12 uppercase text-white text-center">
           <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Torneio de</span>
-          <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]">  Robótica</span>
+          <span className="text-oxe-yellow"> Robótica</span>
         </h1>
         
         <div className="space-y-24">

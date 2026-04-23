@@ -25,17 +25,19 @@ const About: React.FC = () => {
 
           <div className="order-1 lg:order-2">
             <h2 className="font-logo text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 uppercase">
-              <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]">Sobre o</span>
-              <span className="text-oxe-accent drop-shadow-[3px_3px_0px_#ffffff]"> Ôxe-Maker</span><br/>
-              <span className="text-oxe-yellow text-2xl md:text-3xl block mt-4 drop-shadow-[2px_2px_0px_#050D34]">Transformando ideias em realidade</span>
+              <span className="text-white drop-shadow-[3px_3px_0px_#0030B5]"> O Ôxe </span>
+              <span className="text-oxe-yellow drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]"> Maker </span>
+
             </h2>
             <div className="space-y-6 text-white/80 text-xl font-medium leading-relaxed">
               <p>
-              O ÔXE Maker nasce para transformar ideias em realidade. Como o maior evento de robótica e cultura maker em linha reta da GRE Metropolitana Norte/PE, reunimos mentes criativas para construir, colaborar e inovar juntos.
-
-Aqui, aprender é fazer. Criar é compartilhar.
-
-Nossa linguagem é o código, mas nosso impacto vai muito além.
+             O Ôxe Maker surgiu da ideia de trazer para os jovens da Regional Metropolitana Norte da Rede Estadual de Educação de
+              Pernambuco um evento que conseguisse reunir elementos da Robótica, Cultura Maker e do Universo Geek, 
+              contemplando aspectos vivenciados por essa juventude cosmopolita e possibilitando a exposição dos 
+              projetos desenvolvidos pelas Escolas Estaduais da Regional: tecnologia e educação de mãos dadas na era digital
+               possibilitando uma viagem, sem sair do lugar, numa miscelânea de diversão, Iniciação Científica, Protagonismo Juvenil e 
+               uma boa dose Maker de “Faça você mesmo!”. O formato do projeto – que está em sua sexta edição – foi idealizado pela Professora Lidyane Lira – 
+               responsável pelas ações ligadas à Robótica e Cultura Maker da Metronorte, no intuito de fomentar práticas ligadas às áreas mencionadas.
 
               </p>
 

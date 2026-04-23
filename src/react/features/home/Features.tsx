@@ -9,9 +9,7 @@ const Features: React.FC = () => {
           <h2 className="font-logo text-4xl sm:text-6xl md:text-8xl font-black mb-6 uppercase">
             Mão na <span className="text-oxe-accent">Massa</span>
           </h2>
-          <p className="font-mono text-white/60 text-lg">
-            Aqui o sistema é bruto: menos conversa, mais protótipo.
-          </p>
+        
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

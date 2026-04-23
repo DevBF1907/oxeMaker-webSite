@@ -4,37 +4,51 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 const competitions = [
-  { id: 'buzzline', title: 'Buzz Line' },
-  { id: 'buzzpro', title: 'Buzz PRO' },
-  { id: 'sumo', title: 'Sumô de Robôs' },
-  { id: 'combate', title: 'Combate de Robôs' },
-  { id: 'obr', title: 'OBR' },
+  { id: 'buzzline', title: 'Buzz Line', to: '/torneio#buzzline' },
+  { id: 'buzzpro', title: 'Buzz PRO', to: '/torneio#buzzpro' },
+  { id: 'sumo', title: 'Sumô de Robôs', to: '/torneio#sumo' },
+  { id: 'combate', title: 'Combate de Robôs', to: '/torneio#combate' },
+  { id: 'obr', title: 'OBR', to: '/torneio#obr' },
 ];
 
 const geekCategories = [
-  { id: 'cosplay', title: 'Cosplay' },
-  { id: 'kpop', title: 'Dança K-pop' },
+  { id: 'cosplay', title: 'Cosplay', to: '/geek#cosplay' },
+  { id: 'kpop', title: 'Dança K-pop', to: '/geek#kpop' },
 ];
 
-const eventInfo = [
-  { id: 'programacao', title: 'O Plano' },
-  { id: 'mapa-evento', title: 'O Mapa' },
+const eventCategories = [
+  { 
+    title: 'Robótica', 
+    to: '/torneio', 
+    items: competitions 
+  },
+  { 
+    title: 'Cultura Geek', 
+    to: '/geek', 
+    items: geekCategories 
+  },
+  { 
+    title: 'Oficinas Maker', 
+    to: '/oficinas',
+    items: []
+  },
+  { 
+    title: 'Oxethon 2026', 
+    to: '/oxethon',
+    items: []
+  }
 ];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [roboticsDropdown, setRoboticsDropdown] = useState(false);
-  const [geekDropdown, setGeekDropdown] = useState(false);
-  const [eventDropdown, setEventDropdown] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [eventsDropdown, setEventsDropdown] = useState(false);
 
   const navLinks = [
     { to: "/", label: "INÍCIO", color: "hover:text-white" },
-    { to: "/visita", label: "VISITA", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: eventInfo, dropdownState: eventDropdown, setDropdown: setEventDropdown },
-    { to: "/torneio", label: "ROBÓTICA", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: competitions, dropdownState: roboticsDropdown, setDropdown: setRoboticsDropdown },
-    { to: "/oficinas", label: "OFICINAS", color: "hover:text-oxe-yellow" },
-    { to: "/geek", label: "GEEK", color: "hover:text-oxe-yellow", hasDropdown: true, dropdownItems: geekCategories, dropdownState: geekDropdown, setDropdown: setGeekDropdown },
-    { to: "/oxethon", label: "OXETHON", color: "hover:text-oxe-yellow" },
+    { to: "/programacao", label: "PROGRAMAÇÃO", color: "hover:text-oxe-yellow" },
+    { to: "/mapa", label: "MAPA", color: "hover:text-oxe-yellow" },
+    { to: "#", label: "EVENTOS", color: "hover:text-oxe-yellow", hasDropdown: true, isMega: true, dropdownState: eventsDropdown, setDropdown: setEventsDropdown },
+    { to: "/sobre", label: "SOBRE", color: "hover:text-oxe-yellow" },
   ];
 
   return (
@@ -80,23 +94,46 @@ const Navbar: React.FC = () => {
                 {/* Desktop Dropdown */}
                 {hasDropdown && (
                   <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-300 ${link.dropdownState ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-                    <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-48 py-1">
-                      {link.dropdownItems!.map((item) => (
-                        <Link
-                          key={item.id}
-                          to={link.to === "/" ? `/#${item.id}` : `${link.to}#${item.id}`}
-                          className={`block px-4 py-3 hover:bg-white/5 text-white/70 ${link.color} font-logo text-[11px] uppercase tracking-[0.2em] transition-colors border-b border-white/5 last:border-0`}
-                          onClick={() => link.setDropdown!(false)}
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
+                    {link.isMega && (
+                      <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-[400px] p-6 grid grid-cols-2 gap-8">
+                        {eventCategories.map((cat) => (
+                          <div key={cat.title}>
+                            <Link 
+                              to={cat.to}
+                              className="block font-logo text-sm text-oxe-yellow mb-3 hover:translate-x-1 transition-transform uppercase tracking-widest"
+                              onClick={() => setEventsDropdown(false)}
+                            >
+                              {cat.title}
+                            </Link>
+                            <div className="flex flex-col space-y-2">
+                              {cat.items.map(item => (
+                                <Link
+                                  key={item.id}
+                                  to={item.to}
+                                  className="text-[10px] text-white/50 hover:text-white uppercase tracking-wider font-mono transition-colors"
+                                  onClick={() => setEventsDropdown(false)}
+                                >
+                                  {item.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
             );
           })}
+          
+          {/* Inscreva-se Button Desktop */}
+          <Link 
+            to="/inscricao"
+            className="bg-oxe-yellow text-black px-6 py-2.5 font-logo text-base uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-200"
+          >
+            Inscreva-se
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -147,24 +184,32 @@ const Navbar: React.FC = () => {
 
                       {/* Dropdown sub-items */}
                       {link.dropdownState && (
-                        <div className="ml-10 mt-2 space-y-1 border-l-2 border-white/10 pl-3">
-                          <Link
-                            to={link.to}
-                            onClick={() => setIsOpen(false)}
-                            className="block py-1 font-mono text-xs text-white/30 hover:text-white transition-colors"
-                          >
-                            ver página completa →
-                          </Link>
-                          {link.dropdownItems!.map((item) => (
-                            <Link
-                              key={item.id}
-                              to={link.to === "/" ? `/#${item.id}` : `${link.to}#${item.id}`}
-                              onClick={() => setIsOpen(false)}
-                              className={`block w-full text-left py-2 px-2 text-white/60 group-hover:${hoverColor} transition-colors font-logo text-sm uppercase font-bold`}
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
+                        <div className="ml-10 mt-2 space-y-4 border-l-2 border-white/10 pl-3">
+                          {link.isMega && (
+                             eventCategories.map(cat => (
+                               <div key={cat.title}>
+                                 <Link 
+                                   to={cat.to}
+                                   className="block font-logo text-lg text-oxe-yellow uppercase tracking-widest mb-2"
+                                   onClick={() => setIsOpen(false)}
+                                 >
+                                   {cat.title}
+                                 </Link>
+                                 <div className="flex flex-col space-y-1 ml-2">
+                                   {cat.items.map(item => (
+                                     <Link
+                                       key={item.id}
+                                       to={item.to}
+                                       className="text-[10px] text-white/50 uppercase font-mono"
+                                       onClick={() => setIsOpen(false)}
+                                     >
+                                       {item.title}
+                                     </Link>
+                                   ))}
+                                 </div>
+                               </div>
+                             ))
+                          )}
                         </div>
                       )}
                     </>
@@ -183,6 +228,15 @@ const Navbar: React.FC = () => {
                 </div>
               );
             })}
+            
+            {/* Inscreva-se Button Mobile */}
+            <Link 
+              to="/inscricao"
+              className="mt-4 bg-oxe-yellow text-black px-6 py-4 font-logo text-2xl uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-200 text-center"
+              onClick={() => setIsOpen(false)}
+            >
+              Inscreva-se
+            </Link>
           </div>
 
           <div className="mt-auto">
