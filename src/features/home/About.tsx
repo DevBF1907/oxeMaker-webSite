@@ -9,7 +9,7 @@ const About: React.FC = () => {
           <div className="order-2 lg:order-1 relative">
              <div className="maker-card p-4 rotate-2">
                 <img 
-                  src="/public/calango-logo.png" 
+                  src="/img/logo06oxemaker.jpeg" 
                   alt="Maker Working" 
                   className="w-full h-auto transition-all background-blue"
                 />

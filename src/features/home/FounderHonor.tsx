@@ -9,7 +9,7 @@ const FounderHonor: React.FC = () => {
           <div className="w-full md:w-1/3 relative">
             <div className="maker-card p-4 -rotate-3 border-2 border-oxe-accent">
               <img 
-                src="/img/fotoLidy.jpeg" 
+                src="/img/foto-lidy.jpeg" 
                 alt="Idealizadora do Ôxe-Maker" 
                 className="w-full h-auto transition-all rounded-sm"
               />

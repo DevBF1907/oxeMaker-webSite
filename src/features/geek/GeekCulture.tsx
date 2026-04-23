@@ -31,7 +31,7 @@ const GeekCulture: React.FC = () => {
       id: 'kpop',
       title: 'Dança de K-pop',
       description: 'Mostre seu talento na dance com as coreografias mais icônicas do K-pop! O concurso de dança reúne grupos e solistas em uma competição cheia de energia e estilo.',
-      image: '/img/K-pop.png',
+      image: '/img/k-pop.png',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
       editalLink: '/editais/edital_kpop.pdf'
     },
@@ -39,7 +39,7 @@ const GeekCulture: React.FC = () => {
       id: 'justdance',
       title: 'Just Dance',
       description: 'Prepare-se para brilhar na pista com o Just Dance! Mostre seus melhores movimentos e divirta-se em uma competição cheia de ritmo e energia.',
-      image: 'https://picsum.photos/seed/justdance/800/600',
+      image: '/img/calango-just.jpeg',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI'
     }
   ];

@@ -3,36 +3,42 @@ import { ScheduleItem, Sponsor, Feature, GalleryItem } from './types';
 export const EVENT_DATE = new Date('2026-07-02T09:00:00');
 
 export const FEATURES: Feature[] = [
-  {
-    title: 'Papo de Bancada',
-    description: 'Bora ouvir quem já queimou muito dedo de solda e construiu o futuro no quintal de casa.',
-    icon: '🗣️'
+ {
+    title: 'Oficinas Práticas',
+    description:
+      'Aqui é mão na massa de verdade. Nada de só assistir — você constrói, testa, erra e aprende na prática.',
+    icon: '🛠️',
   },
   {
-    title: 'Mutirão de Build',
-    description: 'Pegue seus componentes e venha buildar o impossível em 48 horas de café e código.',
-    icon: '⚡'
+    title: 'Conexões que Transformam',
+    description:
+      'Gente boa se encontra aqui. Troque ideia com mentores, faça contatos e abra portas pra oportunidades reais.',
+    icon: '🔗',
   },
   {
-    title: 'Duelo de Sucata',
-    description: 'Arena aberta! Robôs feitos na raça disputando quem é o rei da Metropolitana Norte.',
-    icon: '🤖'
+    title: 'Competições ÔXE-MAKER',
+    description:
+      'Robótica, cosplay, K-pop e desafios insanos. Mostre seu talento e dispute pra ver quem manda melhor.',
+    icon: '🏆',
   },
   {
-    title: 'Hackeando o Barro',
-    description: 'Mistura de artesania com bits. Oficinas práticas pra você botar a mão na massa de verdade.',
-    icon: '🛠️'
+    title: 'Oxethon: Hackathon Arretado',
+    description:
+      '48 horas no modo turbo. Ideia, código e café até virar projeto de verdade.',
+    icon: '🚀',
   },
   {
-    title: 'Varal de Ideias',
-    description: 'Exponha seu projeto, troque uma ideia e veja como a gente hackeia a vida real.',
-    icon: '💡'
+    title: 'Mostra de Projetos',
+    description:
+      'Vem mostrar o que você criou, trocar ideia e se inspirar com projetos que resolvem problemas de verdade.',
+    icon: '🧪',
   },
   {
-    title: 'Conexão Arretada',
-    description: 'Encontre sua galera, monte seu squad e saia daqui com planos pra mudar o mundo.',
-    icon: '🤝'
-  }
+    title: 'Premiações e Reconhecimento',
+    description:
+      'Seu esforço vale prêmio. Destaque-se, ganhe reconhecimento e saia daqui com moral e novas oportunidades.',
+    icon: '🏅',
+  },
 ];
 
 export const SCHEDULE: ScheduleItem[] = [
@@ -60,10 +66,10 @@ export const SPONSORS: Sponsor[] = [
 ];
 
 export const GALLERY: GalleryItem[] = [
-  { id: 1, url: 'https://picsum.photos/600/400?random=30', title: 'Mãos Sujas, Mente Limpa' },
-  { id: 2, url: 'https://picsum.photos/600/400?random=31', title: 'A Primeira Solda' },
-  { id: 3, url: 'https://picsum.photos/600/400?random=32', title: 'Arena de Robôs' },
-  { id: 4, url: 'https://picsum.photos/600/400?random=33', title: 'Oficina de Barro' },
-  { id: 5, url: 'https://picsum.photos/600/400?random=34', title: 'Protótipos Comunitários' },
-  { id: 6, url: 'https://picsum.photos/600/400?random=35', title: 'Conexão Maker' }
+  { id: 1, url: 'public/img/logo01oxemaker.jpeg', title: 'Ôxe Maker 2021' },
+  { id: 2, url: 'public/img/oxemaker-logo01.jpeg', title: 'Ôxe Maker 2022' },
+  { id: 3, url: 'https://picsum.photos/600/400?random=32', title: 'Ôxe Maker 2023' },
+  { id: 4, url: 'https://picsum.photos/600/400?random=33', title: 'Ôxe Maker 2024' },
+  { id: 5, url: 'public/img/logoOxemaker05.jpeg', title: 'Ôxe Maker 2025' },
+  { id: 6, url: 'public/img/logo06oxemaker.jpeg', title: 'Ôxe Maker 2026' }
 ];

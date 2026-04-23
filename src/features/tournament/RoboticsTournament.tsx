@@ -22,31 +22,31 @@ const RoboticsTournament: React.FC = () => {
       id: 'buzzline',
       title: 'Buzz Line',
       description: 'A competição de Buzz Line desafia os participantes a construir robôs que seguem uma linha com precisão e velocidade. É o teste definitivo de sensores e algoritmos de controle.',
-      image: 'img/buzzline.jpg',
+      image: '/img/buzzline.png',
       formsLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdFEmR2FsT9fwvZZjLlXCztOeZimsvnidaMZOBrRYKDA3u_Kg/viewform',
-      editalLink: '/editais/edital_buzzline.pdf'
+      editalLink: '/editais/edital-buzzline.pdf'
     },
     {
       id: 'buzzpro',
       title: 'Buzz PRO',
       description: 'A categoria Buzz PRO eleva o nível com obstáculos complexos, cruzamentos e velocidades muito maiores. Apenas para os robôs mais refinados.',
-      image: 'img/buzzpro.jpg',
+      image: '/img/buzzpro.png',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
-      editalLink: '/editais/edital_buzzpro.pdf'
+      editalLink: '/editais/edital-buzzline.pdf'
     },
     {
       id: 'sumo',
       title: 'Sumô de Robôs',
       description: 'Dois robôs entram, um robô sai! No Sumô, o objetivo é empurrar o oponente para fora do dojo. Força, tração e estratégia são fundamentais.',
-      image: 'img/sumo.jpg',
+      image: '/img/sumo.png',
       formsLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeOckNfYCA_BdjSqGzWB88LSFskNIXUzmN4hGjTZ1QBykE2VQ/viewform',
-      editalLink: '/editais/edital_sumo.pdf'
+      editalLink: '/editais/edital-sumo.pdf'
     },
     {
       id: 'combate',
       title: 'Combate de Robôs',
       description: 'Destruição total na arena! Robôs equipados com armas ativas lutam até que um seja imobilizado. É a categoria mais emocionante e barulhenta do torneio.',
-      image: 'https://picsum.photos/seed/combat/800/600',
+      image: '/img/cupim-calango.jpeg',
       formsLink: 'https://forms.gle/SEU_LINK_AQUI',
       editalLink: 'https://robocore-eventos.s3.sa-east-1.amazonaws.com/public/Regras+-+Combate+Cupim.pdf'
     },
@@ -54,9 +54,9 @@ const RoboticsTournament: React.FC = () => {
       id: 'obr',
       title: 'OBR (Olimpíada Brasileira de Robótica)',
       description: 'A modalidade OBR simula um ambiente de desastre onde o robô deve resgatar vítimas de forma autônoma, superando obstáculos e terrenos difíceis.',
-      image: '/img/Mascoteobr.png',
+      image: '/img/mascote-obr.png',
       formsLink: 'https://obr.robocup.org.br/participe-da-obr/',
-      editalLink: '/editais/edital_obr.pdf'
+      editalLink: '/editais/edital-obr.pdf'
     }
   ];
 

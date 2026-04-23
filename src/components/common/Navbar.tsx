@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from './Logo';
+import { Link, useLocation } from 'react-router-dom';
+import Logo from '@/components/common/Logo';
 
 const competitions = [
   { id: 'buzzline', title: 'Buzz Line', to: '/torneio#buzzline' },
@@ -42,6 +42,28 @@ const eventCategories = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [eventsDropdown, setEventsDropdown] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const handleOpenMenu = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setEventsDropdown(true);
+      if (window.innerWidth < 1024) {
+        setIsOpen(true);
+      }
+    };
+
+    window.addEventListener('open-oxe-events', handleOpenMenu);
+    return () => window.removeEventListener('open-oxe-events', handleOpenMenu);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setEventsDropdown(false);
+    setIsOpen(false);
+    setActiveCategory(null);
+  }, [pathname]);
 
   const navLinks = [
     { to: "/", label: "INÍCIO", color: "hover:text-white" },
@@ -50,6 +72,11 @@ const Navbar: React.FC = () => {
     { to: "#", label: "EVENTOS", color: "hover:text-oxe-yellow", hasDropdown: true, isMega: true, dropdownState: eventsDropdown, setDropdown: setEventsDropdown },
     { to: "/sobre", label: "SOBRE", color: "hover:text-oxe-yellow" },
   ];
+
+  const triggerEventsMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new Event('open-oxe-events'));
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-oxe-dark border-b border-white/10 px-4 md:px-8 py-3">
@@ -68,7 +95,12 @@ const Navbar: React.FC = () => {
                 key={link.label} 
                 className="relative group/nav"
                 onMouseEnter={() => hasDropdown && link.setDropdown!(true)}
-                onMouseLeave={() => hasDropdown && link.setDropdown!(false)}
+                onMouseLeave={() => {
+                  if (hasDropdown) {
+                    link.setDropdown!(false);
+                    setActiveCategory(null);
+                  }
+                }}
               >
                 <Link
                   to={link.to}
@@ -92,35 +124,78 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 {/* Desktop Dropdown */}
-                {hasDropdown && (
-                  <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-300 ${link.dropdownState ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
-                    {link.isMega && (
-                      <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-[400px] p-6 grid grid-cols-2 gap-8">
-                        {eventCategories.map((cat) => (
-                          <div key={cat.title}>
-                            <Link 
-                              to={cat.to}
-                              className="block font-logo text-sm text-oxe-yellow mb-3 hover:translate-x-1 transition-transform uppercase tracking-widest"
-                              onClick={() => setEventsDropdown(false)}
-                            >
-                              {cat.title}
-                            </Link>
-                            <div className="flex flex-col space-y-2">
-                              {cat.items.map(item => (
+                {hasDropdown && link.isMega && (
+                  <div className={`absolute top-full left-0 pt-2 z-50 transition-all duration-300 
+                    ${link.dropdownState ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+
+                    <div className="bg-oxe-dark border border-white/10 shadow-2xl rounded-sm overflow-hidden w-[420px] p-6">
+
+                      {/* 🔹 NÍVEL 1 - CATEGORIAS */}
+                      {!activeCategory && (
+                        <div className="flex flex-col space-y-4">
+                          {eventCategories.map((cat) => {
+                            if (cat.items.length > 0) {
+                              return (
+                                <button
+                                  key={cat.title}
+                                  onClick={() => setActiveCategory(cat.title)}
+                                  className="flex justify-between items-center text-left group"
+                                >
+                                  <span className="font-logo text-lg text-white group-hover:text-oxe-yellow transition uppercase">
+                                    {cat.title}
+                                  </span>
+                                  <span className="text-white/40 group-hover:text-oxe-yellow">
+                                    →
+                                  </span>
+                                </button>
+                              );
+                            }
+                            return (
+                              <Link
+                                key={cat.title}
+                                to={cat.to}
+                                onClick={() => setEventsDropdown(false)}
+                                className="block font-logo text-lg text-white hover:text-oxe-yellow transition uppercase"
+                              >
+                                {cat.title}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {/* 🔹 NÍVEL 2 - ITENS */}
+                      {activeCategory && (
+                        <div>
+                          {/* botão voltar */}
+                          <button
+                            onClick={() => setActiveCategory(null)}
+                            className="mb-4 text-sm text-white/50 hover:text-white"
+                          >
+                            ← Voltar
+                          </button>
+
+                          <div className="flex flex-col space-y-3">
+                            {eventCategories
+                              .find(cat => cat.title === activeCategory)
+                              ?.items.map(item => (
                                 <Link
                                   key={item.id}
                                   to={item.to}
-                                  className="text-[10px] text-white/50 hover:text-white uppercase tracking-wider font-mono transition-colors"
-                                  onClick={() => setEventsDropdown(false)}
+                                  className="text-white/70 hover:text-oxe-yellow uppercase font-mono text-sm"
+                                  onClick={() => {
+                                    setEventsDropdown(false);
+                                    setActiveCategory(null);
+                                  }}
                                 >
                                   {item.title}
                                 </Link>
                               ))}
-                            </div>
                           </div>
-                        ))}
-                      </div>
-                    )}
+                        </div>
+                      )}
+
+                    </div>
                   </div>
                 )}
               </div>
@@ -128,12 +203,12 @@ const Navbar: React.FC = () => {
           })}
           
           {/* Inscreva-se Button Desktop */}
-          <Link 
-            to="/inscricao"
+          <button 
+            onClick={triggerEventsMenu}
             className="bg-oxe-yellow text-black px-6 py-2.5 font-logo text-base uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-200"
           >
             Inscreva-se
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -230,13 +305,12 @@ const Navbar: React.FC = () => {
             })}
             
             {/* Inscreva-se Button Mobile */}
-            <Link 
-              to="/inscricao"
+            <button 
+              onClick={triggerEventsMenu}
               className="mt-4 bg-oxe-yellow text-black px-6 py-4 font-logo text-2xl uppercase tracking-widest border-2 border-oxe-yellow shadow-[4px_4px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-200 text-center"
-              onClick={() => setIsOpen(false)}
             >
               Inscreva-se
-            </Link>
+            </button>
           </div>
 
           <div className="mt-auto">
