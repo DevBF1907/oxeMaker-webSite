@@ -1,6 +1,8 @@
 
 import React from 'react';
 import About from '../home/About';
+import FounderHonor from '../home/FounderHonor';
+import AnimatedCounter from '../../components/common/AnimatedCounter';
 
 const AboutPage: React.FC = () => {
   return (
@@ -15,6 +17,7 @@ const AboutPage: React.FC = () => {
       </div>
 
       <About />
+      <FounderHonor />
 
       <div className="container mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -35,19 +38,19 @@ const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-white/5 p-6 border border-white/10 text-center">
-              <span className="block font-logo text-5xl text-oxe-yellow mb-2">+500</span>
+              <AnimatedCounter end={2000} prefix="+" className="block font-logo text-5xl text-oxe-yellow mb-2" />
               <span className="block font-mono text-[10px] text-white/40 uppercase">Estudantes Impactados</span>
             </div>
             <div className="bg-white/5 p-6 border border-white/10 text-center">
-              <span className="block font-logo text-5xl text-oxe-yellow mb-2">+20</span>
+              <AnimatedCounter end={58} prefix="+" className="block font-logo text-5xl text-oxe-yellow mb-2" />
               <span className="block font-mono text-[10px] text-white/40 uppercase">Escolas Parceiras</span>
             </div>
             <div className="bg-white/5 p-6 border border-white/10 text-center">
-              <span className="block font-logo text-5xl text-oxe-yellow mb-2">+15</span>
-              <span className="block font-mono text-[10px] text-white/40 uppercase">Competições de Robótica</span>
+              <AnimatedCounter end={9} prefix="+" className="block font-logo text-5xl text-oxe-yellow mb-2" />
+              <span className="block font-mono text-[10px] text-white/40 uppercase">Competições</span>
             </div>
             <div className="bg-white/5 p-6 border border-white/10 text-center">
-              <span className="block font-logo text-5xl text-oxe-yellow mb-2">+100</span>
+              <AnimatedCounter end={90} prefix="+" className="block font-logo text-5xl text-oxe-yellow mb-2" />
               <span className="block font-mono text-[10px] text-white/40 uppercase">Projetos Maker</span>
             </div>
           </div>
@@ -60,7 +63,10 @@ const AboutPage: React.FC = () => {
            <p className="text-black/80 font-mono text-lg max-w-2xl mx-auto mb-10">
              Seja como competidor, mentor ou parceiro, o ÔxeMaker é o lugar onde sua ideia ganha vida.
            </p>
-           <button className="bg-black text-white font-black uppercase tracking-widest px-10 py-5 shadow-[8px_8px_0px_rgba(255,255,255,0.4)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all duration-200">
+           <button 
+             onClick={() => window.dispatchEvent(new Event('open-oxe-events'))}
+             className="bg-black text-white font-black uppercase tracking-widest px-10 py-5 shadow-[8px_8px_0px_rgba(255,255,255,0.4)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all duration-200"
+           >
              Vem Buildar com a gente
            </button>
         </div>

@@ -14,13 +14,14 @@ const FounderHonor: React.FC = () => {
                 className="w-full h-auto transition-all rounded-sm"
               />
               <div className="mt-4 font-mono text-xs text-oxe-accent uppercase font-bold">
-                // idealizadora: lidyane_lira.jpeg
+                idealizadora: lidyane_lira.jpeg
               </div>
             </div>
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-12 h-12 border-t-4 border-l-4 border-oxe-primary"></div>
             <div className="absolute -bottom-6 -right-6 w-12 h-12 border-b-4 border-r-4 border-oxe-yellow"></div>
           </div>
+          
 
           <div className="w-full md:w-2/3">
             <div className="inline-block mb-6 px-4 py-2 bg-oxe-primary text-white font-mono text-xs font-bold uppercase rotate-1">

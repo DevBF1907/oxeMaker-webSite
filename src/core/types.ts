@@ -6,6 +6,12 @@ export interface ScheduleItem {
   description: string;
 }
 
+export interface DaySchedule {
+  day: string;
+  label: string;
+  items: ScheduleItem[];
+}
+
 export interface Sponsor {
   name: string;
   logo: string;

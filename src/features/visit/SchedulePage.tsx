@@ -20,7 +20,7 @@ const SchedulePage: React.FC = () => {
         <div className="bg-oxe-yellow/10 border-l-4 border-oxe-yellow p-6 flex flex-col md:flex-row gap-6 items-center justify-between">
           <div>
             <h3 className="font-logo text-2xl text-oxe-yellow uppercase mb-1">Aviso Importante</h3>
-            <p className="text-white/70 font-mono text-sm">Os horários podem sofrer pequenas alterações conforme o andamento das competições.</p>
+            <p className="text-white/70 font-mono text-sm">Os horários podem sofrer pequenas alterações conforme o andamento do Evento.</p>
           </div>
           <div className="flex gap-4">
              <div className="text-center">
@@ -35,7 +35,7 @@ const SchedulePage: React.FC = () => {
         </div>
       </div>
 
-      <Schedule />
+      <Schedule showTitle={false} />
 
       <div className="container mx-auto px-6 py-24 border-t border-white/5">
         <div className="grid md:grid-cols-2 gap-16">

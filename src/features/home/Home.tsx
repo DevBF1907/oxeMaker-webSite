@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
 import Features from './Features';
 import Gallery from './Gallery';
-import FounderHonor from './FounderHonor';
 
 const Home: React.FC = () => {
   const { hash } = useLocation();
@@ -24,7 +23,6 @@ const Home: React.FC = () => {
     <>
       <Hero />
       <Features />
-      <FounderHonor />
       <Gallery />
     </>
   );
